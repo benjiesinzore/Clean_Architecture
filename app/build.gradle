@@ -4,7 +4,7 @@ plugins {
 
     //External Plugins
     id 'kotlin-kapt'
-//    id 'dagger.hilt.android.plugin'
+    id 'com.google.dagger.hilt.android' version '2.41' apply false
 }
 
 android {
