@@ -3,10 +3,11 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     //External Plugins
     id 'kotlin-kapt'
-    id 'com.google.dagger.hilt.android' version '2.41' apply false
+    id 'com.google.dagger.hilt.android' //version '2.41' apply false
 
 
 }
+
 
 android {
     namespace 'com.benjaminsinzore.connectivity'

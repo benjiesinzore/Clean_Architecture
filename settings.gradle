@@ -3,6 +3,12 @@ pluginManagement {
         gradlePluginPortal()
         google()
         mavenCentral()
+
+
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
 
 
@@ -12,6 +18,11 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
 }
 rootProject.name = "CleanArchitectureAppilication"
