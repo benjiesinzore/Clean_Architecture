@@ -1,10 +1,10 @@
-package com.benjaminsinzore.data.network.model
+package com.benjaminsinzore.domain.di
 
-data class CleanAppDTO(
+data class Blog(
     val id: String,
     val image: String,
     val likes: Int,
-    val owner: OwnerDTO,
+    val owner: Owner,
     val publishDate: String,
     val tags: List<String>,
     val text: String
