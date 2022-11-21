@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/connectivity_java" />
             <option value="$PROJECT_DIR$/data" />
             <option value="$PROJECT_DIR$/domain" />
+            <option value="$PROJECT_DIR$/dynamicfeature" />
           </set>
         </option>
       </GradleProjectSettings>
