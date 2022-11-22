@@ -1,6 +1,6 @@
 package com.benjaminsinzore.domain.repository
 
-import com.benjaminsinzore.domain.di.Blog
+import com.benjaminsinzore.domain.model.Blog
 
 interface GetBlogsRepository {
 

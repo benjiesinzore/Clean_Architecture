@@ -2,8 +2,8 @@ package com.benjaminsinzore.data.mappers
 
 import com.benjaminsinzore.data.network.model.BlogDTO
 import com.benjaminsinzore.data.network.model.OwnerDTO
-import com.benjaminsinzore.domain.di.Blog
-import com.benjaminsinzore.domain.di.Owner
+import com.benjaminsinzore.domain.model.Blog
+import com.benjaminsinzore.domain.model.Owner
 
 fun List<BlogDTO>.toDomain() : List<Blog>{
 

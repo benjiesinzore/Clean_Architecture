@@ -2,8 +2,9 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     //External Plugins
-    id 'com.google.dagger.hilt.android' //version '2.41' apply false
     id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android' //version '2.41' apply false
+
 
 
 }

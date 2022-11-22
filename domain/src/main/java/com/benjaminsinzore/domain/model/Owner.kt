@@ -1,4 +1,4 @@
-package com.benjaminsinzore.domain.di
+package com.benjaminsinzore.domain.model
 
 data class Owner(
     val firstName: String,
