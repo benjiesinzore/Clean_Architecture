@@ -8,10 +8,6 @@ import retrofit2.http.Header
 
 interface ApiService {
 
-//    suspend fun getBlogs() : Response<BlogsDTO>
-
-
-
 
     @GET("post")
     suspend fun getBlogs(
