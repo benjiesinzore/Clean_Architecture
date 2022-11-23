@@ -10,9 +10,12 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.core.view.WindowCompat
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.benjaminsinzore.cleanarchitectureappilication.navigation.NavigationItem
+import com.benjaminsinzore.cleanarchitectureappilication.screens.home.HomeScreen
 import com.benjaminsinzore.cleanarchitectureappilication.ui.theme.CleanArchitectureAppilicationTheme
-import com.benjaminsinzore.cleanarchitectureappilication.ui.views.CleanApp
 import com.benjaminsinzore.cleanarchitectureappilication.ui.views.TestClass
 
 class MainActivity : ComponentActivity() {
@@ -33,7 +36,22 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Benjamin Sinzore?")
+
+                    val navController = rememberNavController()
+                    MyApp {
+
+                        NavHost(
+                            navController = navController,
+                            startDestination = NavigationItem.Home.route
+                        ){
+
+                            composable(NavigationItem.Home.route){
+                                HomeScreen()
+                            }
+
+
+                        }
+                    }
 
                 }
 
@@ -55,4 +73,12 @@ fun DefaultPreview() {
     CleanArchitectureAppilicationTheme {
         Greeting("Android")
     }
+}
+
+
+
+
+@Composable
+fun MyApp(content : @Composable () -> Unit){
+    content()
 }
