@@ -55,6 +55,10 @@ fun PostItem(it: Blog) {
         Row(modifier = Modifier.fillMaxSize(), verticalAlignment = Alignment.CenterVertically) {
 
             CircleImage(50.0, 50.0, 25.0, it.owner.picture)
+            
+            Spacer(modifier = Modifier.width(6.dp))
+            
+            Text(text = "${it.owner.firstName} ${it.owner.lastName}")
         }
         
     }
