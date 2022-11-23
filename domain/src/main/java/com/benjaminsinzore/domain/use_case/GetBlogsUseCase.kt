@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 class GetBlogsUseCase @Inject constructor(private val getBlogsRepository: GetBlogsRepository) {
 
-    suspend operator fun invoke() : Flow<Resource<List<Blog>>> = flow {
+    operator fun invoke() : Flow<Resource<List<Blog>>> = flow {
 
         emit(Resource.Loading(null))
 
