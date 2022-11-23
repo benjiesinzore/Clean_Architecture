@@ -17,7 +17,10 @@ import com.benjaminsinzore.cleanarchitectureappilication.navigation.NavigationIt
 import com.benjaminsinzore.cleanarchitectureappilication.screens.home.HomeScreen
 import com.benjaminsinzore.cleanarchitectureappilication.ui.theme.CleanArchitectureAppilicationTheme
 import com.benjaminsinzore.cleanarchitectureappilication.ui.views.TestClass
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
 
@@ -46,7 +49,7 @@ class MainActivity : ComponentActivity() {
                         ){
 
                             composable(NavigationItem.Home.route){
-                                HomeScreen()
+                                HomeScreen(navController = navController)
                             }
 
 

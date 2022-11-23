@@ -8,15 +8,19 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.Divider
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import coil.compose.rememberAsyncImagePainter
+import coil.compose.rememberImagePainter
 import com.benjaminsinzore.domain.model.Blog
 
 @Composable
@@ -52,7 +56,7 @@ fun PostItem(it: Blog) {
     
     Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center) {
         
-        Row(modifier = Modifier.fillMaxSize(), verticalAlignment = Alignment.CenterVertically) {
+        Row(modifier = Modifier.fillMaxSize().padding(8.dp), verticalAlignment = Alignment.CenterVertically) {
 
             CircleImage(50.0, 50.0, 25.0, it.owner.picture)
             
@@ -60,6 +64,21 @@ fun PostItem(it: Blog) {
             
             Text(text = "${it.owner.firstName} ${it.owner.lastName}")
         }
+
+        Image(painter = rememberImagePainter(data = it.image), contentDescription = null,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(300.dp)
+            )
+        
+        Text(
+            text = it.text,
+            modifier = Modifier.padding(12.dp),
+            style = TextStyle(color = Color.Gray, fontSize = 20.sp)
+        )
+
+        Divider()
         
     }
 
@@ -74,7 +93,7 @@ fun CircleImage(width : Double, height : Double, radius : Double, imageUrl : Str
         .height(height = height.dp),
         shape = RoundedCornerShape(radius.dp)
     ) {
-        Image(painter = rememberAsyncImagePainter(model = imageUrl), contentDescription = null,
+        Image(painter = rememberImagePainter(data = imageUrl), contentDescription = null,
         contentScale = ContentScale.Crop)
     }
 

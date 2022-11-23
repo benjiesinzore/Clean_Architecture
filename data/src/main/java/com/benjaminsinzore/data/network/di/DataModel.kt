@@ -1,5 +1,6 @@
 package com.benjaminsinzore.data.network.di
 
+import com.benjaminsinzore.comons.Constance
 import com.benjaminsinzore.data.network.ApiService
 import com.benjaminsinzore.data.repository.GetBlogsRepositoryImpl
 import com.benjaminsinzore.domain.repository.GetBlogsRepository
@@ -16,7 +17,7 @@ object DataModel {
 
     @Provides
     fun provideRetrofit() : Retrofit{
-        return Retrofit.Builder().baseUrl("").addConverterFactory(GsonConverterFactory.create())
+        return Retrofit.Builder().baseUrl(Constance.Base_URL).addConverterFactory(GsonConverterFactory.create())
             .build()
     }
 
