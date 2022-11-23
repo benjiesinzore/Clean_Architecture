@@ -1,6 +1,7 @@
 package com.benjaminsinzore.cleanarchitectureappilication.screens.home
 
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -11,9 +12,11 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import coil.compose.rememberAsyncImagePainter
 import com.benjaminsinzore.domain.model.Blog
 
 @Composable
@@ -51,7 +54,7 @@ fun PostItem(it: Blog) {
         
         Row(modifier = Modifier.fillMaxSize(), verticalAlignment = Alignment.CenterVertically) {
 
-            CircleImage()
+            CircleImage(50.0, 50.0, 25.0, it.owner.picture)
         }
         
     }
@@ -60,14 +63,15 @@ fun PostItem(it: Blog) {
 
 
 @Composable
-fun CircleImage(width : Double, height : Double, radius : Double, imagegeUrl : String){
+fun CircleImage(width : Double, height : Double, radius : Double, imageUrl : String){
 
     Card(modifier = Modifier
         .width(width = width.dp)
         .height(height = height.dp),
         shape = RoundedCornerShape(radius.dp)
     ) {
-//        Image(painter = rememberImagePainter(data = imagegeUrl))
+        Image(painter = rememberAsyncImagePainter(model = imageUrl), contentDescription = null,
+        contentScale = ContentScale.Crop)
     }
 
 }
